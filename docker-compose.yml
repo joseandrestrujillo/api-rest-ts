@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  database:
+    image: mongo
+    environment:
+      - MONGO_INITDB_DATABASE=api-rest-ts
+    ports:
+      - '27017:27017'
