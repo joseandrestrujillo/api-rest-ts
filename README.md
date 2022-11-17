@@ -30,6 +30,6 @@ Ejecutar:
 ```cmd
 > npm i
 ```
-```
+```cmd
 > npm run dev
 ```
