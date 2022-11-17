@@ -1,4 +1,4 @@
-export interface Phone {
+export interface IPhone {
     color: string;
     capacity: number;
     so: 'Android' | 'IOS';
