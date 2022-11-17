@@ -2,6 +2,7 @@ import { IAuth } from "../interfaces/auth.interface";
 import { IUser } from "../interfaces/user.interface";
 import UserModel from "../models/user";
 import { encrypt, verified } from "../utils/encrypt.handle";
+import { generateJWT } from "../utils/jwt.handle";
 
 const registerUser = async (user: IUser) => {
     const exist = await UserModel.findOne({ email: user.email });
@@ -22,8 +23,9 @@ const loginUser = async (user: IAuth) => {
 
     if (!isCorrect) return "INCORRECT CREDENTIALS";
 
+    const token = generateJWT(userDB.email);
 
-    return userDB;
+    return token;
 }
 
 export { registerUser, loginUser };
